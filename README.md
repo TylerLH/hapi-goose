@@ -5,6 +5,24 @@
 
 `npm install --save hapi-mongoose`
 
+### Usage
+
+In your hapi.js app, register the plugin in your pack similar to the example:
+
+```node
+var server = new Hapi.Server(process.env.PORT);
+
+// Register the hapi-mongoose plugin
+server.pack.register({
+  plugin: require('hapi-mongoose'),
+  options: {
+    mongodb_uri: 'mongodb://localhost/myapp_dev'
+  }
+}, function(err) {
+  if (err) { throw err }
+});
+```
+
 ### License Information
 
 Copyright (c) 2014, Tyler Hughes <iampbt@gmail.com>

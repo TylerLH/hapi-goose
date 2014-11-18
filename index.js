@@ -6,13 +6,13 @@
 var mongoose = require('mongoose');
 
 // Connect to database
-function connect() {
+function connect(cb) {
   plugin.log(['info', 'mongoose'], 'Connecting to database: ' + options.mongodb_uri);
   mongoose.connect(function(err) {
     if (err) {
-      plugin.log(['info', 'mongoose'], 'Connected to database: ' + options.mongodb_uri);
+      cb(err);
     } else {
-      plugin.log(['info', 'mongoose'], 'Error connecting to database: ' + options.mongodb_uri);
+      cb();
     };
   })
 };
@@ -27,8 +27,15 @@ exports.register = function(plugin, options, next) {
   plugin.expose('instance', mongoose);
   plugin.expose('connect', connect);
   plugin.expose('disconnect', disconnect);
-  connect();
-  next();
+  connect(function(err) {
+    if (err) {
+      plugin.log(['info', 'mongoose'], 'Error connecting to database: ' + options.mongodb_uri);
+      next(err);
+    } else {
+      plugin.log(['info', 'mongoose'], 'Connected to database: ' + options.mongodb_uri);
+      next();
+    }
+  })
 };
 
 exports.register.attributes = {
