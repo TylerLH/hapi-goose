@@ -1,5 +1,6 @@
-var chai = require('chai');
-var Hapi = require('hapi');
+var chai   = require('chai');
+var expect = chai.expect;
+var Hapi   = require('hapi');
 var server;
 var pluginConfig = {
   plugin: require('../'),
@@ -19,6 +20,13 @@ describe('hapi-mongoose', function() {
 
     it('should register successfully within hapi', function(done) {
       server.pack.register(pluginConfig, done);
+    });
+
+    it('should expose the Mongoose instance and connect/disconnect methods', function() {
+      expect(server.plugins).to.have.property('hapi-mongoose');
+      expect(server.plugins['hapi-mongoose']).to.have.property('instance');
+      expect(server.plugins['hapi-mongoose']).to.have.property('connect');
+      expect(server.plugins['hapi-mongoose']).to.have.property('disconnect');
     });
 
   });

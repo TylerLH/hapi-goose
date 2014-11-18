@@ -28,8 +28,9 @@ server.pack.register({
 var mongoose = server.plugins['hapi-mongoose'].instance;
 
 // You can also connect/disconnect with the database
-mongoose.connect(someCallback);
-mongoose.disconnect();
+// These are just wrappers on the regular Mongoose methods with some logging
+server.plugins['hapi-mongoose'].connect(someCallback);
+server.plugins['hapi-mongoose'].disconnect();
 
 // Start server
 server.start();
