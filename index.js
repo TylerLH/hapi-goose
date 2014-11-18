@@ -1,4 +1,4 @@
-// mongoose-hapi
+// hapi-mongoose
 // --------------
 // Mongoose ORM adapter for hapi.js
 // Author: Tyler Hughes <iampbt@gmail.com>
