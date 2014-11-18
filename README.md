@@ -21,6 +21,11 @@ server.pack.register({
 }, function(err) {
   if (err) { throw err }
 });
+
+// Add routes, other plugins, etc...
+
+// Start server
+server.start();
 ```
 
 ### License Information
