@@ -1,6 +1,6 @@
 {
-  "name": "hapi-mongoose",
-  "version": "0.1.0",
+  "name": "hapi-goose",
+  "version": "0.0.0",
   "description": "Mongoose ORM adapter plugin for hapi.js",
   "main": "index.js",
   "scripts": {

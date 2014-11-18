@@ -5,11 +5,11 @@ var server;
 var pluginConfig = {
   plugin: require('../'),
   options: {
-    mongodb_uri: 'mongodb://localhost/hapi_mongoose_test'
+    mongodb_uri: 'mongodb://localhost/hapi_goose_test'
   }
 };
 
-describe('hapi-mongoose', function() {
+describe('hapi-goose', function() {
 
   // Create new hapi server before testing
   before(function() {
@@ -23,10 +23,10 @@ describe('hapi-mongoose', function() {
     });
 
     it('should expose the Mongoose instance and connect/disconnect methods', function() {
-      expect(server.plugins).to.have.property('hapi-mongoose');
-      expect(server.plugins['hapi-mongoose']).to.have.property('instance');
-      expect(server.plugins['hapi-mongoose']).to.have.property('connect');
-      expect(server.plugins['hapi-mongoose']).to.have.property('disconnect');
+      expect(server.plugins).to.have.property('hapi-goose');
+      expect(server.plugins['hapi-goose']).to.have.property('instance');
+      expect(server.plugins['hapi-goose']).to.have.property('connect');
+      expect(server.plugins['hapi-goose']).to.have.property('disconnect');
     });
 
   });

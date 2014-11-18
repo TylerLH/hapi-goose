@@ -1,9 +1,9 @@
-# hapi-mongoose
+# hapi-goose
 ### An adapter for Mongoose as a hapi.js plugin
 
 ### Installation
 
-`npm install --save hapi-mongoose`
+`npm install --save hapi-goose`
 
 ### Usage
 
@@ -12,9 +12,9 @@ In your hapi.js app, register the plugin in your pack similar to the example:
 ```node
 var server = new Hapi.Server(process.env.PORT);
 
-// Register the hapi-mongoose plugin
+// Register the hapi-goose plugin
 server.pack.register({
-  plugin: require('hapi-mongoose'),
+  plugin: require('hapi-goose'),
   options: {
     mongodb_uri: 'mongodb://localhost/myapp_dev'
   }
@@ -25,12 +25,12 @@ server.pack.register({
 // Add routes, other plugins, etc...
 
 // In other modules, you can access the Mongoose instance
-var mongoose = server.plugins['hapi-mongoose'].instance;
+var mongoose = server.plugins['hapi-goose'].instance;
 
 // You can also connect/disconnect with the database
 // These are just wrappers on the regular Mongoose methods with some logging
-server.plugins['hapi-mongoose'].connect(someCallback);
-server.plugins['hapi-mongoose'].disconnect();
+server.plugins['hapi-goose'].connect(someCallback);
+server.plugins['hapi-goose'].disconnect();
 
 // Start server
 server.start();
