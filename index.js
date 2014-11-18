@@ -17,12 +17,13 @@ exports.register = function(plugin, options, next) {
         plugin.log(['info', 'mongoose'], 'Connected to database: ' + options.mongodb_uri);
         cb();
       };
-    })
+    });
   };
 
   // Disconnect from database
   function disconnect() {
     mongoose.disconnect();
+    plugin.log(['info', 'mongoose'], 'Disconnected from database: ' + options.mongodb_uri);
   };
 
   plugin.expose('instance', mongoose);
@@ -33,8 +34,8 @@ exports.register = function(plugin, options, next) {
       next(err);
     } else {
       next();
-    }
-  })
+    };
+  });
 };
 
 exports.register.attributes = {

@@ -4,7 +4,7 @@
   "description": "Mongoose ORM adapter plugin for hapi.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha ./test/test.js --reporter spec"
   },
   "keywords": [
     "hapi",
@@ -14,5 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "mongoose": "^3.8.19"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "hapi": "^7.5.2",
+    "mocha": "^2.0.1"
   }
 }
