@@ -20,7 +20,7 @@ function connect() {
 // Disconnect from database
 function disconnect() {
   mongoose.disconnect();
-}
+};
 
 exports.register = function(plugin, options, next) {
   var db = mongoose.connect(options.mongodb_uri);
