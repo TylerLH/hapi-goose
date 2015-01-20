@@ -23,12 +23,14 @@ server.pack.register({
 });
 
 // Add routes, other plugins, etc...
+// Use mongoose as you would normally.
+var mongoose = require('mongoose');
+var User = mongoose.model(...);
 
-// In other modules, you can access the Mongoose instance
-var mongoose = server.plugins['hapi-goose'].instance;
+// Later in your app, if you find yourself needing to manage connection to the db...
 
 // You can also connect/disconnect with the database
-// These are just wrappers on the regular Mongoose methods with some logging
+// These are just wrappers on the regular Mongoose methods with some logging added
 server.plugins['hapi-goose'].connect(someCallback);
 server.plugins['hapi-goose'].disconnect();
 
