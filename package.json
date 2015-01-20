@@ -1,6 +1,6 @@
 {
   "name": "hapi-goose",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Mongoose ORM adapter plugin for hapi.js",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,9 @@
     "chai": "^1.10.0",
     "hapi": "^7.5.2",
     "mocha": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TylerLH/hapi-goose.git"
   }
 }
