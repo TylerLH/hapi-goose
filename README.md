@@ -1,6 +1,8 @@
 # hapi-goose
 ### An adapter for Mongoose as a hapi.js plugin
 
+[![npm](https://img.shields.io/npm/v/hapi-goose.svg?maxAge=2592000)]()
+
 ### Installation
 
 `npm install --save hapi-goose`
